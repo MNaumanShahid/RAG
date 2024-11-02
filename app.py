@@ -49,20 +49,20 @@ def get_chatbot_response(query):
 def process_input():
     user_input = st.session_state.input
     if user_input:
-        # Append user input to conversation
+
         st.session_state.conversation.append({"role": "user", "text": user_input})
 
-        # Get response from chatbot
+
         response = get_chatbot_response(user_input)
 
-        # Append chatbot response to conversation
+
         st.session_state.conversation.append({"role": "bot", "text": response})
 
-        # Update chat history with the latest interaction
+
         st.session_state.chat_history.append((user_input, response))
 
-        # Clear the input field
-        st.session_state.input = ''  # Safe to modify within the callback
+
+        st.session_state.input = ''
 
 # User input with on_change callback
 st.text_input("You:", key='input', on_change=process_input)
