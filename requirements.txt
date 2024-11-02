@@ -3,3 +3,6 @@ requests~=2.32.3
 langchain~=0.3.7
 langchain-openai~=0.2.5
 langchain-community
+chromadb
+openai
+tiktoken
